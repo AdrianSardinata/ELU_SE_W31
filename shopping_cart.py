@@ -20,7 +20,7 @@ def display_total(total):
 CART = [
     {'name': 'Item A', 'price': 10.99},
     {'name': 'Item B', 'price': 5.99},
-    {'name': 'Item C', 'price': '8.49'}
+    {'name': 'Item C', 'price': 8.49}
 ]
 
 for item in CART:
