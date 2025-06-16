@@ -1,10 +1,20 @@
+"""
+A simple shopping cart program to calculate and display the total price.
+"""
+
 def calculate_total(cart):
+    """
+    Calculates the total price of all items in the shopping cart.
+    """
     total = 0
-    for item in cart:
-        total += item.price
+    for cart_item in cart:
+        total += cart_item['price']
     return total
 
 def display_total(total):
+    """
+    Displays the calculated total price in a user-friendly format.
+    """
     print("Total price: " + total)
 
 CART = [
@@ -14,7 +24,7 @@ CART = [
 ]
 
 for item in CART:
-    print(f"Item: {item.name} - Price: ${item.price}")
+    print(f"Item: {item['name']} - Price: ${item['price']}")
 
 shopping_cart_total = calculate_total(CART)
 display_total(shopping_cart_total)
