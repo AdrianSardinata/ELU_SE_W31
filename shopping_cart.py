@@ -15,7 +15,7 @@ def display_total(total):
     """
     Displays the calculated total price in a user-friendly format.
     """
-    print("Total price: " + total)
+    print("Total price: " + str(total))
 
 CART = [
     {'name': 'Item A', 'price': 10.99},
