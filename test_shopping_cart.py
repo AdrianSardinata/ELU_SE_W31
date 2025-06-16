@@ -1,7 +1,6 @@
 """"
 A simple test suite to verify the stdout of shopping_cart.py
 """
-
 import unittest
 import io
 from unittest.mock import patch
@@ -18,14 +17,14 @@ class TestShoppingCart(unittest.TestCase):
             "Item: Item C - Price: $8.49\n"
             "Total price: 25.47\n"
         )
-        file = open('shopping_cart.py')
-        code = file.read()
+        code = None
+        with open('shopping_cart.py', encoding='utf8') as file:
+            code = file.read()
             
         with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
             exec(code, globals(), locals())
             stdout_str = mock_stdout.getvalue()
             self.assertEqual(stdout_str, gold_stdout)
-        file.close()
 
 if __name__ == '__main__':
     unittest.main()
