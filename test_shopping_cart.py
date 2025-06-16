@@ -20,9 +20,9 @@ class TestShoppingCart(unittest.TestCase):
         code = None
         with open('shopping_cart.py', encoding='utf8') as file:
             code = file.read()
-            
+
         with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
-            exec(code, globals(), locals())
+            exec(code, globals(), locals()) # pylint: disable=exec-used
             stdout_str = mock_stdout.getvalue()
             self.assertEqual(stdout_str, gold_stdout)
 
